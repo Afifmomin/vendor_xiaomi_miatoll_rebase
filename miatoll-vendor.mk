@@ -348,6 +348,17 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/miatoll/proprietary/vendor/radio/qcril_database/upgrade/9_version_update_ecc_table_127531.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/9_version_update_ecc_table_127531.sql
 
 PRODUCT_PACKAGES += \
+    libcamera_algoup_jni.xiaomi \
+    libcamera_mianode_jni.xiaomi \
+    libdoc_photo \
+    libdoc_photo_c++_shared \
+    libgallery_arcsoft_dualcam_refocus \
+    libgallery_arcsoft_portrait_lighting \
+    libgallery_arcsoft_portrait_lighting_c \
+    libgallery_mpbase \
+    libmibokeh_gallery \
+    librefocus \
+    librefocus_mibokeh \
     eglSubDriverAndroid \
     libEGL_adreno \
     libGLESv1_CM_adreno \
@@ -901,6 +912,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.fm@1.0 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
     vendor.qti.imsrtpservice@3.0 \
+    MiuiExtraPhoto \
     CACertService \
     CneApp \
     IWlanService \
@@ -982,6 +994,17 @@ PRODUCT_PACKAGES += \
     wfdservice64
 
 PRODUCT_PACKAGES += \
+    system_system_priv-app_MiuiCamera_lib_arm64_libcamera_algoup_jni_xiaomi_so \
+    system_system_priv-app_MiuiCamera_lib_arm64_libcamera_mianode_jni_xiaomi_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libdoc_photo_c++_shared_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_dualcam_refocus_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_portrait_lighting_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_arcsoft_portrait_lighting_c_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libgallery_mpbase_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_libmibokeh_gallery_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_librefocus_so \
+    system_system_priv-app_MiuiExtraPhoto_lib_arm64_librefocus_mibokeh_so \
     vendor_lib_libEGL_adreno_so \
     vendor_lib_libGLESv2_adreno_so \
     vendor_lib_libq3dtools_adreno_so \
