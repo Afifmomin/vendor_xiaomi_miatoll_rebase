@@ -16,6 +16,189 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "libOpenCL_system",
+    stem: "libOpenCL",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libOpenCL.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libvndksupport",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_dualcam_refocus_system",
+    stem: "libarcsoft_dualcam_refocus",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_dualcam_refocus.so",
+            ],
+            shared_libs: [
+                "libarcsoft_dualcam_refocus_rear_t_system",
+                "libarcsoft_dualcam_refocus_rear_w_system",
+                "libarcsoft_dualcam_refocus_front_system",
+                "libmpbase_system",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_dualcam_refocus_front_system",
+    stem: "libarcsoft_dualcam_refocus_front",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_dualcam_refocus_front.so",
+            ],
+            shared_libs: [
+                "libmpbase_system",
+                "libOpenCL_system",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_dualcam_refocus_rear_t_system",
+    stem: "libarcsoft_dualcam_refocus_rear_t",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_dualcam_refocus_rear_t.so",
+            ],
+            shared_libs: [
+                "libmpbase_system",
+                "libOpenCL_system",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_dualcam_refocus_rear_w_system",
+    stem: "libarcsoft_dualcam_refocus_rear_w",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_dualcam_refocus_rear_w.so",
+            ],
+            shared_libs: [
+                "libmpbase_system",
+                "libOpenCL_system",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_portrait_lighting_system",
+    stem: "libarcsoft_portrait_lighting",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_portrait_lighting.so",
+            ],
+            shared_libs: [
+                "libmpbase_system",
+                "libarcsoft_portrait_lighting_c_system",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libarcsoft_portrait_lighting_c_system",
+    stem: "libarcsoft_portrait_lighting_c",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libarcsoft_portrait_lighting_c.so",
+            ],
+            shared_libs: [
+                "libOpenCL_system",
+                "liblog",
+                "libdl",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcamera_algoup_jni.xiaomi",
     owner: "xiaomi",
     strip: {
@@ -93,7 +276,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
-                "libOpenCL",
+                "libOpenCL_system",
                 "libjnigraphics",
                 "libc",
                 "libz",
@@ -139,7 +322,7 @@ cc_prebuilt_library_shared {
                 "proprietary/system/lib64/libgallery_arcsoft_dualcam_refocus.so",
             ],
             shared_libs: [
-                "libmpbase",
+                "libmpbase_system",
                 "liblog",
                 "libc",
                 "libm",
@@ -163,8 +346,8 @@ cc_prebuilt_library_shared {
                 "proprietary/system/lib64/libgallery_arcsoft_portrait_lighting.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libarcsoft_portrait_lighting_c",
+                "libmpbase_system",
+                "libarcsoft_portrait_lighting_c_system",
                 "liblog",
                 "libc",
                 "libm",
@@ -188,7 +371,7 @@ cc_prebuilt_library_shared {
                 "proprietary/system/lib64/libgallery_arcsoft_portrait_lighting_c.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_system",
                 "liblog",
                 "libdl",
                 "libc",
@@ -232,11 +415,32 @@ cc_prebuilt_library_shared {
                 "proprietary/system/lib64/libmibokeh_gallery.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_system",
                 "liblog",
                 "libz",
                 "libm",
                 "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmpbase_system",
+    stem: "libmpbase",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libmpbase.so",
+            ],
+            shared_libs: [
                 "libc",
             ],
         },
@@ -743,7 +947,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libOpenCL",
+    name: "libOpenCL_vendor",
+    stem: "libOpenCL",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -4447,10 +4652,10 @@ cc_prebuilt_library_shared {
                 "libcamera_metadata",
                 "libcom.qti.chinodeutils",
                 "libcutils",
-                "libarcsoft_portrait_lighting",
-                "libarcsoft_portrait_lighting_c",
-                "libmpbase",
-                "libarcsoft_dualcam_refocus",
+                "libarcsoft_portrait_lighting_vendor",
+                "libarcsoft_portrait_lighting_c_vendor",
+                "libmpbase_vendor",
+                "libarcsoft_dualcam_refocus_vendor",
                 "libarcsoft_beautyshot",
                 "liblog",
                 "libc++",
@@ -4481,7 +4686,7 @@ cc_prebuilt_library_shared {
                 "libcamera_metadata",
                 "libcom.qti.chinodeutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libarcsoft_dualcam_image_optical_zoom",
                 "liblog",
                 "libc++",
@@ -4514,7 +4719,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libarcsoft_preview_deflicker",
                 "libc++",
                 "libc",
@@ -4546,7 +4751,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libarcsoft_distortion_correction",
                 "libc++",
                 "libc",
@@ -4578,7 +4783,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libxmi_high_dynamic_range",
                 "libhvx_interface",
                 "libc++",
@@ -4611,7 +4816,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libxmi_high_dynamic_range",
                 "libhvx_interface",
                 "libc++",
@@ -4642,8 +4847,8 @@ cc_prebuilt_library_shared {
                 "libcamera_metadata",
                 "libcom.qti.chinodeutils",
                 "libcutils",
-                "libmpbase",
-                "libarcsoft_dualcam_refocus",
+                "libmpbase_vendor",
+                "libarcsoft_dualcam_refocus_vendor",
                 "libmiStereoFactoryRemapLib",
                 "liblog",
                 "libc++",
@@ -4709,7 +4914,7 @@ cc_prebuilt_library_shared {
                 "libtriplecam_video_optical_zoom",
                 "libarcsat",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libz",
                 "liblog",
                 "libc++",
@@ -4742,7 +4947,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libarcsoft_supernight",
                 "libc++",
                 "libc",
@@ -4812,7 +5017,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libmiai_portraitsupernight",
                 "libbeauty_face_interface",
                 "libc++",
@@ -4845,7 +5050,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libmiai_supernight",
                 "libc++",
                 "libc",
@@ -6163,8 +6368,8 @@ cc_prebuilt_library_shared {
                 "libcom.qti.chinodeutils",
                 "libutils",
                 "libcutils",
-                "libarcsoft_portrait_lighting",
-                "libarcsoft_portrait_lighting_c",
+                "libarcsoft_portrait_lighting_vendor",
+                "libarcsoft_portrait_lighting_c_vendor",
                 "libmibokeh_712",
                 "liblog",
                 "libc++",
@@ -6198,7 +6403,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "libvideofilter_only",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libz",
                 "libc++",
                 "libc",
@@ -6261,7 +6466,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -6766,7 +6971,7 @@ cc_prebuilt_library_shared {
                 "libmialgo_utils",
                 "libmialgo_rfs",
                 "libion",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libcdsprpc",
                 "vendor.qti.hardware.vpp@1.1",
                 "vendor.qti.hardware.vpp@1.2",
@@ -8036,7 +8241,7 @@ cc_prebuilt_library_shared {
                 "libGLESv3",
                 "libEGL",
                 "libnativewindow",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libc",
                 "libm",
                 "libdl",
@@ -8060,7 +8265,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libalCFR.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8112,7 +8317,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libalhLDC.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "liblog",
                 "libGLESv3",
                 "libEGL",
@@ -8168,7 +8373,7 @@ cc_prebuilt_library_shared {
                 "libcom.qti.chinodeutils",
                 "libtriplecam_video_optical_zoom",
                 "libcutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc++",
                 "libc",
@@ -8195,7 +8400,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc++_shared",
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8220,8 +8425,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_bodyslim.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libEGL",
                 "libGLESv3",
@@ -8248,7 +8453,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_distortion_correction.so",
             ],
             shared_libs: [
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8273,8 +8478,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_image_optical_zoom.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8299,7 +8504,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_optical_zoom_control.so",
             ],
             shared_libs: [
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8313,7 +8518,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_dualcam_refocus",
+    name: "libarcsoft_dualcam_refocus_vendor",
+    stem: "libarcsoft_dualcam_refocus",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8324,10 +8530,10 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_refocus.so",
             ],
             shared_libs: [
-                "libarcsoft_dualcam_refocus_rear_t",
-                "libarcsoft_dualcam_refocus_rear_w",
-                "libarcsoft_dualcam_refocus_front",
-                "libmpbase",
+                "libarcsoft_dualcam_refocus_rear_t_vendor",
+                "libarcsoft_dualcam_refocus_rear_w_vendor",
+                "libarcsoft_dualcam_refocus_front_vendor",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8341,7 +8547,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_dualcam_refocus_front",
+    name: "libarcsoft_dualcam_refocus_front_vendor",
+    stem: "libarcsoft_dualcam_refocus_front",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8352,8 +8559,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_refocus_front.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8367,7 +8574,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_dualcam_refocus_rear_t",
+    name: "libarcsoft_dualcam_refocus_rear_t_vendor",
+    stem: "libarcsoft_dualcam_refocus_rear_t",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8378,8 +8586,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_refocus_rear_t.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8393,7 +8601,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_dualcam_refocus_rear_w",
+    name: "libarcsoft_dualcam_refocus_rear_w_vendor",
+    stem: "libarcsoft_dualcam_refocus_rear_w",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8404,8 +8613,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_dualcam_refocus_rear_w.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8419,7 +8628,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_portrait_lighting",
+    name: "libarcsoft_portrait_lighting_vendor",
+    stem: "libarcsoft_portrait_lighting",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8430,8 +8640,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_portrait_lighting.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libarcsoft_portrait_lighting_c",
+                "libmpbase_vendor",
+                "libarcsoft_portrait_lighting_c_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -8445,7 +8655,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libarcsoft_portrait_lighting_c",
+    name: "libarcsoft_portrait_lighting_c_vendor",
+    stem: "libarcsoft_portrait_lighting_c",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -8456,7 +8667,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_portrait_lighting_c.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "liblog",
                 "libdl",
                 "libc",
@@ -8505,7 +8716,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libarcsoft_supernight.so",
             ],
             shared_libs: [
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -9583,7 +9794,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libion",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libfastcvdsp_stub",
                 "libcdsprpc",
                 "libc++",
@@ -10310,7 +10521,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "liblog",
                 "libz",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libbeauty_face_interface",
                 "libc",
                 "libdl",
@@ -10337,7 +10548,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "liblog",
                 "libz",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libc",
                 "libdl",
             ],
@@ -10493,11 +10704,11 @@ cc_prebuilt_library_shared {
                 "libEGL",
                 "libGLESv2",
                 "libgrallocutils",
-                "libmpbase",
+                "libmpbase_vendor",
                 "libarcsoft_beautyshot",
-                "libarcsoft_dualcam_refocus",
-                "libarcsoft_portrait_lighting",
-                "libarcsoft_portrait_lighting_c",
+                "libarcsoft_dualcam_refocus_vendor",
+                "libarcsoft_portrait_lighting_vendor",
+                "libarcsoft_portrait_lighting_c_vendor",
                 "libarcsoft_bodyslim",
                 "libalhLDC",
                 "libmiStereoFactoryRemapLib",
@@ -10529,7 +10740,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libmibokeh_712.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "liblog",
                 "libz",
                 "libm",
@@ -10598,7 +10809,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmpbase",
+    name: "libmpbase_vendor",
+    stem: "libmpbase",
     owner: "xiaomi",
     strip: {
         none: true,
@@ -11537,7 +11749,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libsdk_sr.so",
             ],
             shared_libs: [
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libdl",
                 "libGLESv2",
                 "libEGL",
@@ -12256,7 +12468,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libtriplecam_optical_zoom_control.so",
             ],
             shared_libs: [
-                "libmpbase",
+                "libmpbase_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -12281,8 +12493,8 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libtriplecam_video_optical_zoom.so",
             ],
             shared_libs: [
-                "libmpbase",
-                "libOpenCL",
+                "libmpbase_vendor",
+                "libOpenCL_vendor",
                 "liblog",
                 "libc",
                 "libm",
@@ -12507,7 +12719,7 @@ cc_prebuilt_library_shared {
                 "libm",
                 "liblog",
                 "libz",
-                "libOpenCL",
+                "libOpenCL_vendor",
                 "libc",
                 "libdl",
             ],
