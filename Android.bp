@@ -3543,6 +3543,72 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+ 	name: "libqcbassboost",
+ 	owner: "xiaomi",
+ 	strip: {
+ 		none: true,
+ 	},
+ 	target: {
+ 		android_arm: {
+ 			srcs: ["proprietary/vendor/lib/soundfx/libqcbassboost.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 		android_arm64: {
+ 			srcs: ["proprietary/vendor/lib64/soundfx/libqcbassboost.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 	},
+ 	compile_multilib: "both",
+ 	relative_install_path: "soundfx",
+ 	prefer: true,
+ 	soc_specific: true,
+}
+ 
+cc_prebuilt_library_shared {
+ 	name: "libqcreverb",
+ 	owner: "xiaomi",
+ 	strip: {
+ 		none: true,
+ 	},
+ 	target: {
+ 		android_arm: {
+ 			srcs: ["proprietary/vendor/lib/soundfx/libqcreverb.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 		android_arm64: {
+ 			srcs: ["proprietary/vendor/lib64/soundfx/libqcreverb.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 	},
+ 	compile_multilib: "both",
+ 	relative_install_path: "soundfx",
+ 	prefer: true,
+ 	soc_specific: true,
+}
+ 
+ cc_prebuilt_library_shared {
+ 	name: "libqcvirt",
+ 	owner: "xiaomi",
+ 	strip: {
+ 		none: true,
+ 	},
+ 	target: {
+ 		android_arm: {
+ 			srcs: ["proprietary/vendor/lib/soundfx/libqcvirt.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 		android_arm64: {
+ 			srcs: ["proprietary/vendor/lib64/soundfx/libqcvirt.so"],
+ 			shared_libs: ["liblog", "libutils", "libcutils", "libaudioutils", "libdapparamstorage", "libhidlbase", "vendor.dolby.hardware.dms@2.0", "libc++", "libc", "libm", "libdl", ],
+ 		},
+ 	},
+ 	compile_multilib: "both",
+ 	relative_install_path: "soundfx",
+ 	prefer: true,
+ 	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.qti.eeprom.sunny_gc8034",
     owner: "xiaomi",
     strip: {
