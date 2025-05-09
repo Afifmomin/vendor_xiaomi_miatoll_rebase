@@ -398,6 +398,7 @@ PRODUCT_PACKAGES += \
     libadiertac \
     libadm \
     libaudcal \
+    libbatterylistener \
     libaudioconfigstore \
     libaudioparsers \
     libbluetooth_audio_session_qti \
@@ -405,11 +406,17 @@ PRODUCT_PACKAGES += \
     libcapiv2svacnn \
     libcapiv2svarnn \
     libcapiv2vop \
+    libcomprcapture \
+    libexthwplugin \
     libdrc \
     libgcs-calwrapper \
     libgcs-ipc \
     libgcs-osal \
     libgcs \
+    libhdmiedid \
+    libhfp \
+    libsndmonitor \
+    libspkrprot \
     libhdmipassthru \
     liblistensoundmodel2 \
     libmm-hdcpmgr \
